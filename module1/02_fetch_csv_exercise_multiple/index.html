@@ -64,14 +64,21 @@
         const northern = [];
         const southern = [];
         const rows = data.split('\n').slice(1);
+        // converts giant string into individual strings into more arrays 
         rows.forEach(row => {
           const cols = row.split(',');
-          years.push(cols[0]);
-          temps.push(14 + parseFloat(cols[1]));
-          northern.push(14 + parseFloat(cols[2]));
-          southern.push(14 + parseFloat(cols[3]));
+          // console.log(cols)
+          // console.log(row)
+          // generates individual array on each iteration
+          years.push(cols[0]); // collections of all years
+          temps.push(cols[1]); // temps collection
+          console.log(temps)
+
+          // temps.push(14 + parseFloat(cols[1]));
+          // northern.push(14 + parseFloat(cols[2]));
+          // southern.push(14 + parseFloat(cols[3]));
         });
-        return { years, temps, northern, southern };
+        // return { years, temps, northern, southern };
       }
     </script>
   </body>

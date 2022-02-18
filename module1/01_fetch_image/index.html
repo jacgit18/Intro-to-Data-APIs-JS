@@ -14,17 +14,21 @@
 
       catchRainbow()
         .then(response => {
-          console.log('yay');
+          console.log(response);
         })
         .catch(error => {
           console.log('error!');
           console.error(error);
         });
 
+        // fetch img src data and path
       async function catchRainbow() {
         const response = await fetch('rainbow.jpg');
-        const blob = await response.blob();
+        const blob = await response.blob(); // turns img to blob object with meta data 
+        // console.log(blob); 
         document.getElementById('rainbow').src = URL.createObjectURL(blob);
+        return "hi"// gets stored in response of then
+        // The URL.createObjectURL static method creates a DOMString containing a URL representing the object given in the parameter.
       }
     </script>
   </body>
