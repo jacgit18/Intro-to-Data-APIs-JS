@@ -55,7 +55,7 @@
         });
       }
 
-      async function getData() {
+       const getData = async () =>{
         // const response = await fetch('testdata.csv');
         const response = await fetch('ZonAnn.Ts+dSST.csv');
         const data = await response.text();
@@ -71,14 +71,15 @@
           // console.log(row)
           // generates individual array on each iteration
           years.push(cols[0]); // collections of all years
-          temps.push(cols[1]); // temps collection
+          // temps.push(cols[1]); // temps collection
+
+          temps.push(14 + parseFloat(cols[1])); // adding 14  and convert temp whish a string to a num
           console.log(temps)
 
-          // temps.push(14 + parseFloat(cols[1]));
-          // northern.push(14 + parseFloat(cols[2]));
-          // southern.push(14 + parseFloat(cols[3]));
+          northern.push(14 + parseFloat(cols[2]));
+          southern.push(14 + parseFloat(cols[3]));
         });
-        // return { years, temps, northern, southern };
+        return { years, temps, northern, southern };
       }
     </script>
   </body>
