@@ -21,6 +21,7 @@ app.get('/api', (request, response) => {
   });
 });
 
+
 app.post('/api', (request, response) => {
   const data = request.body;
   const timestamp = Date.now();
