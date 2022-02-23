@@ -1,0 +1,27 @@
+GET http://localhost:3000/
+
+
+###
+GET http://localhost:3000/api
+
+
+###
+GET http://localhost:3000/logs
+
+### dont work no post on thia endpoint
+POST http://localhost:3000/
+Content-Type: application/json
+
+{
+    "title": "test",
+    "id": "5"
+}
+
+###
+POST http://localhost:3000/api
+Content-Type: application/json
+
+{
+    "title": "test",
+    "id": "5"
+}

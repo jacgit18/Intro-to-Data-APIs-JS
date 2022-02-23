@@ -1,4 +1,6 @@
 const express = require('express');
+const axios = require('axios');
+
 const Prod =[
   {
       id: 1,
@@ -28,11 +30,16 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
-
-// app.get('/', (request, response) => {
+// axios.get('/', (request, response) => {
 //   // response.send("hello")
-//   response.json(Prod)
+//   // response.body()
 // });
+
+
+app.get('/', (request, response) => {
+  // response.send("hello")
+  response.json(Prod)
+});
 
 app.get('/Prod/:name', cusMidWare,(request, response) => {
   response.json(Prod.find((prod)=>{
