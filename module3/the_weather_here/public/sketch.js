@@ -3,6 +3,7 @@ let lat, lon;
 if ('geolocation' in navigator) {
   console.log('geolocation available');
   navigator.geolocation.getCurrentPosition(async position => {
+    console.log(position)
     let lat, lon, weather, air;
     try {
       lat = position.coords.latitude;

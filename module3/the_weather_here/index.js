@@ -32,6 +32,7 @@ app.post('/api', (request, response) => {
   response.json(data);
 });
 
+// :paramVarName
 app.get('/weather/:latlon', async (request, response) => {
   console.log(request.params);
   const latlon = request.params.latlon.split(',');
