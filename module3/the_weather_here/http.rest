@@ -1,0 +1,18 @@
+GET http://localhost:3000/
+
+
+
+###
+
+
+GET http://localhost:3000/prod/brush?erik=4
+
+###
+
+POST http://localhost:3000/add
+Content-Type: application/json
+
+{
+    "title": "test",
+    "id": "5"
+}
