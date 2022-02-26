@@ -30,28 +30,44 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
-// axios.get('/', (request, response) => {
-//   // response.send("hello")
-//   // response.body()
+axios.get('/', (request, response) => {
+  response.send("hello")
+  response.json(Prod)
+  // response.body()
+});
+
+
+// app.get('/', (request, response) => {
+//   response.send("hello")
+//   response.json(Prod)
 // });
 
 
-app.get('/', (request, response) => {
-  // response.send("hello")
-  response.json(Prod)
-});
+// axios.get('/Prod/:name', cusMidWare,(request, response) => {
+//   response.json(Prod.find((prod)=>{
+//     return request.params.name === prod.name;
+//   }))
+//   // response.send(request.params.name)
+// });
 
-app.get('/Prod/:name', cusMidWare,(request, response) => {
-  response.json(Prod.find((prod)=>{
-    return request.params.name === prod.name;
-  }))
-  // response.send(request.params.name)
-});
-
-app.post('/add', (req, res) => {
+axios.post('/add', (req, res) => {
   console.log(req.body.title);
   res.sendStatus(200)
 })
+
+
+
+// app.get('/Prod/:name', cusMidWare,(request, response) => {
+//   response.json(Prod.find((prod)=>{
+//     return request.params.name === prod.name;
+//   }))
+  // response.send(request.params.name)
+// });
+
+// app.post('/add', (req, res) => {
+//   console.log(req.body.title);
+//   res.sendStatus(200)
+// })
 
 
 app.listen(3000, () => console.log('listening at 3000'));
